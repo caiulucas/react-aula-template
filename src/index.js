@@ -1,17 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Welcome } from './Welcome';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const user1 = {
+  name: 'Caio Lucas',
+  surname: 'Pereira da Silva',
+  image: 'https://github.com/caiulucas.png'
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const user2 = {
+  name: 'Anne',
+  surname: 'Afro Academy',
+  image: 'https://github.com/rafaballerini.png'
+}
+
+const element = (
+  <div>
+    <Welcome user={user1} />
+    <Welcome user={user2} />
+  </div>
+)
+
+ReactDOM.render(element, document.getElementById('root'));
+
+// function concat(user) {
+//   return user.name + ' ' + user.surname;
+// }
+
+// function clock() {
+//   const date = new Date();
+
+//   const element = (
+//     <div>
+//       <h1>Olá, {concat(user)}</h1>
+//       <h2>{date.toLocaleTimeString()}</h2>
+//       <img src={user.image} height={200} />;
+//     </div>
+//   );
+
+//   ReactDOM.render(element, document.getElementById('root'));
+// }
+
+// setInterval(clock, 1000);
